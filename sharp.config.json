@@ -1,6 +1,6 @@
 {
   "jpeg": {
-    "quality": 20
+    "quality": 75
   },
   "webp": {
     "nearLossless": true
