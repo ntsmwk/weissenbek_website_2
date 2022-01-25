@@ -1,24 +1,67 @@
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">
-      <img src="/_site/img/Logo.svg" class="nav-logo">
-    </a>
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link h2" href="/_site/index.html">
-              Startseite
-            </a>
+<section class="py-4">
+  <div class="container mx-auto px-10">
+    <nav
+      class="flex flex-row flex-wrap items-center"
+      x-data="{ dropdown: false }"
+    >
+      <a href="/">
+        <img
+          class="w-80"
+          width="500"
+          height="110"
+          src="/_site/img/logo.svg"
+          alt="Logo of Weissenbek Company"
+/>
+      </a>
+      <div class="grow flex flex-row items-center justify-end md:hidden">
+        <button
+          @click="dropdown = !dropdown"
+          @click.away="dropdown = false"
+          type="button"
+          aria-label="Menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-10 text-[#474444] hover:text-black"
+            width="40"
+            height="40"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              x-show="!dropdown"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+/>
+            <path
+              x-cloak
+              x-show="dropdown"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+/>
+          </svg>
+        </button>
+      </div>
+      <ul
+        class="hidden my-6 w-full text-right flex flex-col gap-8 md:my-0 md:w-auto md:text-left md:grow md:flex md:flex-row md:gap-4 md:justify-end"
+        x-bind:class="{ 'hidden': !dropdown }"
+      >
+        <li>
+          <a class="text-3xl text-[#474444] hover:text-black" href="/"
+            >Startseite</a
+          >
         </li>
-        <li class="nav-item">
-          <a class="nav-link h2" href="/_site/galery/index.html">
-              Galerie
-            </a>
+        <li>
+          <a class="text-3xl text-[#474444] hover:text-black" href="/galery/"
+            >Galerie</a
+          >
         </li>
       </ul>
-    </div>
+    </nav>
   </div>
-</nav>
+</section>
