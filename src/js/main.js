@@ -6,3 +6,8 @@ import 'tw-elements';
 
 Alpine.plugin(intersect);
 Alpine.start();
+
+$(document).on('click', '[data-toggle="lightbox"]', function (event) {
+  event.preventDefault();
+  $(this).ekkoLightbox();
+});
