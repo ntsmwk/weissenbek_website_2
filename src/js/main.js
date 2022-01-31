@@ -7,7 +7,15 @@ import 'tw-elements';
 Alpine.plugin(intersect);
 Alpine.start();
 
-$(document).on('click', '[data-toggle="lightbox"]', function (event) {
-  event.preventDefault();
-  $(this).ekkoLightbox();
-});
+document.querySelectorAll('[data-toggle="lightbox"]').forEach(function (e){
+  e.addEventListener('click', function(event) {
+    event.preventDefault();
+    this.ekkoLightbox();
+
+  })
+})
+
+// $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+//   event.preventDefault();
+//   $(this).ekkoLightbox();
+// });
