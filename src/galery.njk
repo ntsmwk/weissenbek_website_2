@@ -71,851 +71,385 @@ title: Tischlerei Weißenbek
   </div>
 </section>
 
-{# Kitchen #}
-<section class="container mx-auto py-10">
-  <div class="flex flex-row">
-    <div class="flex-initial w-[200px] mx-20px pt-[60px] text-center">
-      <span class="text-3xl font-bold font-variant-caps-small-caps">Küche</span>
+{# Portfolio #}
+
+<section id="portfolio" class="bg-gray-50 py-20">
+  <div
+    x-data="{ selected: 0 }"
+    class="container mx-auto px-10 flex flex-col gap-4"
+  >
+    {# <h2 class="text-3xl text-center font-bold">Our Portfolio</h2>
+    <h3 class="text-2xl text-center mb-6">What We Have Built</h3> #}
+    <div class="flex flex-row gap-4 justify-center">
+      <h4
+        x-on:click="selected = 0"
+        class="text-center text-2xl pb-2 px-2 border-b-4 hover:cursor-pointer"
+        x-bind:class="{ 'border-[#063f86]' : selected == 0 }"
+      >
+        Küche
+      </h4>
+      <h4
+        x-on:click="selected = 1"
+        class="text-center text-2xl pb-2 px-2 border-b-4 hover:cursor-pointer"
+        x-bind:class="{ 'border-[#063f86]' : selected == 1 }"
+      >
+        Esszimmer
+      </h4>
+
+      <h4
+        x-on:click="selected = 2"
+        class="text-center text-2xl pb-2 px-2 border-b-4 hover:cursor-pointer"
+        x-bind:class="{ 'border-[#063f86]' : selected == 2 }"
+      >
+        Badezimmer
+      </h4>
+
+      <h4
+        x-on:click="selected = 3"
+        class="text-center text-2xl pb-2 px-2 border-b-4 hover:cursor-pointer"
+        x-bind:class="{ 'border-[#063f86]' : selected == 3 }"
+      >
+        Wohnzimmer
+      </h4>
+
+      <h4
+        x-on:click="selected = 4"
+        class="text-center text-2xl pb-2 px-2 border-b-4 hover:cursor-pointer"
+        x-bind:class="{ 'border-[#063f86]' : selected == 4 }"
+      >
+        Eingangsbereich
+      </h4>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+
+    {# Kitchen #}
+    <div x-show="selected == 0" 
+         x-transition:enter.duration.300ms
+         class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/BILD0041.jpg?width=400px"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/DSCN1579.jpg?width=400px"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/DSCN1580.jpg?width=400px"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/DSCN1582.jpg?width=400px"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/DSCN1583.jpg?width=400px"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/DSCN1584.jpg?width=400px"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/DSCN1585.jpg?width=400px"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/DSCN1586.jpg?width=400px"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/DSCN1598.jpg?width=400px"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/DSCN1599.jpg?width=400px"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/DSCN1670.jpg?width=400px"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/DSCN1671.jpg?width=400px"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/DSCN1673.jpg?width=400px"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/DSCN1674.jpg?width=400px"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[250px] min-w-[250px] h-[250px] min-h-[250px]"
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/DSCN1676.jpg?width=400px"
              alt=""/>
       </div>
-
     </div>
+
+    {# Dining Room #}
+    <div
+        x-cloak
+        x-show="selected == 1"
+        x-transition:enter.duration.300ms
+        class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4"
+      >
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/DSCN1964.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/327 - Kopie.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/328 - Kopie.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/329 - Kopie.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/330 - Kopie.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/DSCN0657.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/DSCN0658.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/DSCN0659.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/DSCN0660.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/DSCN0664.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/DSCN0665.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/DSCN0667.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/DSCN1933.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/DSCN1934.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/DSCN1935.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/dining-room/DSCN1936.jpg?width=400px"
+             alt=""/>
+      </div>
+    </div>
+
+    {# Bathroom #}
+    <div 
+        x-cloak
+        x-show="selected == 2" 
+        x-transition:enter.duration.300ms
+        class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/bathroom/DSCN1589.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/bathroom/DSCN1591.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/bathroom/DSCN1593.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/bathroom/DSCN1782.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/bathroom/DSCN1783.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/bathroom/DSCN1786.jpg?width=400px"
+             alt=""/>
+      </div>
+    </div>
+
+    {# Living Room #}
+    <div 
+        x-cloak
+        x-show="selected == 3"
+        x-transition:enter.duration.300ms
+        class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4"
+      >
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/living-room/DSCN0420.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/living-room/DSCN0422.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/living-room/DSCN0424.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/living-room/DSCN0428.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/living-room/DSCN0431.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/living-room/DSCN0442.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/living-room/DSCN0443.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/living-room/DSCN0444.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/living-room/DSCN0445.jpg?width=400px"
+             alt=""/>
+      </div>
+    </div>
+
+    {# Entrance #}
+    <div x-cloak
+         x-show="selected == 4"
+         x-transition:enter.duration.300ms      
+         class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4" 
+         >
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/entrance/117.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/entrance/118.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/entrance/119.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/entrance/120.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/entrance/121.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/entrance/122.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/entrance/123.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/entrance/124.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/entrance/DSCN1931.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/entrance/DSCN1928.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/entrance/DSCN1930.jpg?width=400px"
+             alt=""/>
+      </div>
+      <div class="inline-block">
+        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             src="../img/galery/entrance/DSCN1600.jpg?width=400px"
+             alt=""/>
+      </div>
+    </div>
+
   </div>
 </section>
-
-{# <section id="showcase-kitchen" class="showcase-gallery showcase-kitchen">
-  <div class="row">
-    <div class="col-md-3">
-      <div class="showcase-heading">
-        <span class="h2">Küche</span>
-      </div>
-    </div>
-    <div class="col-md-9">
-      <div class="row">
-      
-
-    
-
-      <div class="row">
-        <div class="col-md-4">
-          <a
-                  href="../img/galery/kitchen/DSCN1674.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="kitchen-gallery"
-                  data-type="image"
-                >
-            <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/kitchen/DSCN1674.jpg"
-                    alt=""
-/>
-          </a>
-        </div>
-
-        <div class="col-md-4">
-          <a
-                  href="../img/galery/kitchen/DSCN1676.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="kitchen-gallery"
-                  data-type="image"
-                >
-            <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/kitchen/DSCN1676.jpg"
-                    alt=""
-/>
-          </a>
-        </div> #}
-{# </div>
-</div>
-</div>
-</section>
-
-<hr class="dashed"/> #}
-<!-- Showcase: Dining Room -->
-{# <section
-        id="showcase-dining-room"
-        class="showcase-gallery showcase-dining-room"
-      >
-    <div class="row">
-      <div class="col-md-3">
-        <div class="showcase-heading">
-          <span class="h2">Esszimmer</span>
-        </div>
-      </div>
-      <div class="col-md-9">
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/DSCN1964.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/DSCN1964.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/327 - Kopie.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/327 - Kopie.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/328 - Kopie.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/328 - Kopie.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/329 - Kopie.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/329 - Kopie.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/330 - Kopie.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/330 - Kopie.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/DSCN0657.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/DSCN0657.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/DSCN0658.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/DSCN0658.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/DSCN0659.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/DSCN0659.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/DSCN0660.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/DSCN0660.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/DSCN0664.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/DSCN0664.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/DSCN0665.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/DSCN0665.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/DSCN0667.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/DSCN0667.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/DSCN1933.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/DSCN1933.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/DSCN1934.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/DSCN1934.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/DSCN1935.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/DSCN1935.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/dining-room/DSCN1936.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="dining-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/dining-room/DSCN1936.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="dashed"/> #}
-<!-- Showcase: Living Room -->
-{# <section
-        id="showcase-living-room"
-        class="showcase-gallery showcase-living-room"
-      >
-    <div class="row">
-      <div class="col-md-3">
-        <div class="showcase-heading">
-          <span class="h2">Wohnzimmer</span>
-        </div>
-      </div>
-      <div class="col-md-9">
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/living-room/DSCN0420.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="living-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/living-room/DSCN0420.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/living-room/DSCN0422.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="living-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/living-room/DSCN0422.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/living-room/DSCN0424.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="living-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/living-room/DSCN0424.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/living-room/DSCN0428.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="living-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/living-room/DSCN0428.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/living-room/DSCN0431.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="living-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/living-room/DSCN0431.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/living-room/DSCN0442.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="living-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/living-room/DSCN0442.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/living-room/DSCN0443.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="living-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/living-room/DSCN0443.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/living-room/DSCN0444.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="living-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/living-room/DSCN0444.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/living-room/DSCN0445.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="living-room-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/living-room/DSCN0445.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="dashed"/> #}
-<!-- Showcase: Bathroom -->
-{# <section
-        id="showcase-bathroom"
-        class="showcase-gallery showcase-bathroom"
-      >
-    <div class="row">
-      <div class="col-md-3">
-        <div class="showcase-heading">
-          <span class="h2">Badezimmer</span>
-        </div>
-      </div>
-      <div class="col-md-9">
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/bathroom/DSCN1589.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="bathroom-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/bathroom/DSCN1589.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/bathroom/DSCN1591.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="bathroom-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/bathroom/DSCN1591.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/bathroom/DSCN1593.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="bathroom-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/bathroom/DSCN1595.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/bathroom/DSCN1782.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="bathroom-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/bathroom/DSCN1782.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/bathroom/DSCN1783.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="bathroom-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/bathroom/DSCN1783.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/bathroom/DSCN1786.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="bathroom-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/bathroom/DSCN1786.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="dashed"/> #}
-<!-- Showcase: Entrance -->
-{# <section
-        id="showcase-entrance"
-        class="showcase-gallery showcase-entrance"
-      >
-    <div class="row">
-      <div class="col-md-3">
-        <div class="showcase-heading">
-          <span class="h2">Vorzimmer &amp; Eingangstür</span>
-        </div>
-      </div>
-      <div class="col-md-9">
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/entrance/117.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="entrance-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/entrance/117.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/entrance/118.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="entrance-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/entrance/118.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/entrance/119.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="entrance-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/entrance/119.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/entrance/120.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="entrance-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/entrance/120.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/entrance/121.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="entrance-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/entrance/121.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/entrance/122.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="entrance-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/entrance/122.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/entrance/123.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="entrance-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/entrance/123.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/entrance/124.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="entrance-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/entrance/124.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/entrance/DSCN1931.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="entrance-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/entrance/DSCN1931.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/entrance/DSCN1928.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="entrance-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/entrance/DSCN1928.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/entrance/DSCN1930.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="entrance-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/entrance/DSCN1930.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a
-                  href="../img/galery/entrance/DSCN1600.jpg"
-                  data-toggle="lightbox"
-                  data-gallery="entrance-gallery"
-                  data-type="image"
-                >
-              <img
-                    class="showcase-img img-fluid"
-                    src="../img/galery/entrance/DSCN1600.jpg"
-                    alt=""
-/>
-            </a>
-          </div>
-        </div>
-      </div> 
-    </div>
-  </section>
-</div> #}
