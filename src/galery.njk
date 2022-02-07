@@ -3,9 +3,9 @@ layout: layouts/base.njk
 title: Tischlerei Weißenbek
 ---
 
-<section class="container mx-auto">
-  <div class="absolute left-0 top-0 width-[100%] height-[100%] backdrop-brightness-10 bg-black/30"></div>
+<div class="sticky top-0 backdrop-brightness-90 w-[100vw] h-[100vh] bg-black/30"></div>
 
+<section class="container mx-auto">
   <div id="galeryCarousel" class="carousel slide relative" data-bs-ride="carousel">
     <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
       <button
@@ -74,7 +74,9 @@ title: Tischlerei Weißenbek
 </section>
 
 {# Portfolio #}
-<section id="portfolio" class="bg-gray-50 py-20">
+<section id="portfolio" class="py-20">
+  {# backdrop-brightness-90 bg-white/30 #}
+
   <div
     x-data="{ selected: 0 }"
     class="container mx-auto px-10 flex flex-col gap-4"
