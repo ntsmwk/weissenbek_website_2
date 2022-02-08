@@ -3,9 +3,7 @@ layout: layouts/base.njk
 title: Tischlerei Weißenbek
 ---
 
-<div class="sticky top-0 backdrop-brightness-90 w-[100vw] h-[100vh] bg-black/30"></div>
-
-<section class="container mx-auto">
+<section x-data="{}" class="container mx-auto">
   <div id="galeryCarousel" class="carousel slide relative" data-bs-ride="carousel">
     <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
       <button
@@ -73,14 +71,70 @@ title: Tischlerei Weißenbek
   </div>
 </section>
 
-{# Portfolio #}
-<section id="portfolio" class="py-20">
-  {# backdrop-brightness-90 bg-white/30 #}
+<div x-data="{ imgModal : false, imgModalSrc : '' }">
+  <template 
+      x-on:img-modal.window="imgModal = $event.detail.imgModal; imgModalSrc = $event.detail.imgModalSrc;" 
+      x-if="imgModal">
+    <div 
+      x-transition:enter="transition ease-out duration-300" 
+      x-transition:enter-start="opacity-0 transform scale-90" 
+      x-transition:enter-end="opacity-100 transform scale-100" 
+      x-transition:leave="transition ease-in duration-300" 
+      x-transition:leave-start="opacity-100 transform scale-100" 
+      x-transition:leave-end="opacity-0 transform scale-90" 
+      x-on:click.away="imgModalSrc = ''" 
+      class="p-2 fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center bg-black bg-opacity-75">
+      <div @click.away="imgModal = ''" class="flex flex-col max-w-3xl max-h-full overflow-auto">
+        <div class="z-50">
+          <button @click="imgModal = ''" class="float-right pt-2 pr-2 outline-none focus:outline-none">
+            <svg class="fill-current text-white " xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+              <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="p-2">
+          <img :alt="imgModalSrc" class="object-contain h-1/2-screen" :src="imgModalSrc">
+        </div>
+      </div>
+    </div>
+  </template>
+</div>
 
+{# Portfolio #}
+<section x-data="{ imgModal:false, imgModalSrc : '123' }" id="portfolio" class="py-20">
+  <template 
+    x-on:img-modal.window="imgModal = $event.detail.imgModal; imgModalSrc = $event.detail.imgModalSrc;"
+    x-if="imgModal">
+    {# <strong x-text="imgModal"></strong>
+    <strong x-text="imgModalSrc"></strong> #}
+
+    <div 
+      x-transition:enter="transition ease-out duration-300" 
+      x-transition:enter-start="opacity-0 transform scale-90" 
+      x-transition:enter-end="opacity-100 transform scale-100" 
+      x-transition:leave="transition ease-in duration-300" 
+      x-transition:leave-start="opacity-100 transform scale-100" 
+      x-transition:leave-end="opacity-0 transform scale-90" 
+      x-on:click.away="imgModalSrc = ''" 
+      class="p-2 fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center bg-black bg-opacity-75">
+
+      <div x-on:click.away="imgModalSrc = ''" class="flex flex-col max-w-3xl max-h-full overflow-auto">
+        <div class="z-50">
+          <button x-on:click="imgModalSrc = ''" class="float-right pt-2 pr-2 outline-none focus:outline-none">
+            <svg class="fill-current text-white " xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+              <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="p-2">
+          <img :alt="imgModalSrc" class="object-contain h-1/2-screen" :src="imgModalSrc">
+        </div>
+      </div>
+    </div>
+  </template>
   <div
-    x-data="{ selected: 0 }"
-    class="container mx-auto px-10 flex flex-col gap-4"
-  >
+      x-data="{ selected: 0 }"
+      class="container mx-auto px-10 flex flex-col gap-4">
     <div class="flex flex-row gap-4 justify-center">
       <h4
         x-on:click="selected = 0"
@@ -124,16 +178,24 @@ title: Tischlerei Weißenbek
          x-transition:enter.duration.300ms
          class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
       <div class="inline-block">
-        <img class="hover:shadow-xl hover:cursor-pointer w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            @click="$dispatch('img-modal', {imgModal: false, imgModalSrc: '../img/galery/kitchen/20220201_BILD0041.jpg?width=400px' })" 
+            class="cursor-pointer">
+          <img class="hover:shadow-xl hover:cursor-pointer w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              width="1234"
              height="2323"
              src="../img/galery/kitchen/20220201_BILD0041.jpg?width=400px"
              alt=""/>
+        </a>
       </div>
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            x-on:click="imgModal = true; imgModalSrc= '../img/galery/kitchen/20220201_DSCN1579.jpg?width=400px'" 
+            class="cursor-pointer">
+          <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              src="../img/galery/kitchen/20220201_DSCN1579.jpg?width=400px"
              alt=""/>
+        </a>
       </div>
       <div class="inline-block">
         <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
