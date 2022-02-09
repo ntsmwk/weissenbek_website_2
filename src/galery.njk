@@ -73,7 +73,7 @@ title: Tischlerei Weißenbek
 
 {# Portfolio #}
 <section x-data="{selectedCategory: 0, selectedImage : -1 }" id="portfolio" class="py-20">
-  {# Lighthouse Backdrops #}
+  {# Lighthouse Backdrop #}
   <div 
         x-cloak
         x-show="selectedImage != -1"
@@ -85,29 +85,29 @@ title: Tischlerei Weißenbek
         x-transition:leave-end="opacity-0 transform scale-90" 
         x-on:click.away="selectedImage = -1" 
         class="p-2 fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center bg-black bg-opacity-75">
-    <div x-on:click.away="selectedImage = -1" class="flex flex-col h-full w-full ">
-      <div class="z-50">
+    <div x-on:click.away="selectedImage = -1" class="flex flex-col h-full w-full">
+      <div class="fixed top-0 right-0 z-50">
         <button x-on:click="selectedImage = -1" class="float-right h-20 w-20 pt-2 pr-2 outline-none focus:outline-none">
           <svg class="fill-current text-white " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
             <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
           </svg>
         </button>
       </div>
-      <div class="flex flex-row flex-wrap md:flex-nowrap justify-center md:justify-between p-2 w-full">
+      <div class="flex flex-row flex-wrap md:flex-nowrap justify-center md:justify-between max-h-screen py-[30px] my-auto">
         <button 
-            class="mt-3 md:mt-0"
-            x-on:click="selectedImage = selectedImage.slice(13)== 1? 'image-galery-3' : 'image-galery-' + (parseInt(selectedImage.slice(13))-1);">
+            class="relative md:fixed md:top-1/2 md:left-0 mt-3 md:mt-0"
+            x-on:click="selectedImage = selectedImage.slice(13)== 1? 'image-galery-17' : 'image-galery-' + (parseInt(selectedImage.slice(13))-1);">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
           </svg>
         </button>
-        <img class="md:max-w-xl lg:max-w-2xl xl:max-w-4xl order-first md:order-none" 
-             width="2500"
-             height="1875"
-             x-bind:src="console.error(selectedImage); return selectedImage != -1 ? document.getElementById(selectedImage).dataset.src : ''">
+        <img class="md:max-w-xl lg:max-w-2xl xl:max-w-4xl object-contain order-first md:order-none" 
+             width="1875"
+             height="2500"
+             x-bind:src="selectedImage != -1 ? document.getElementById(selectedImage).dataset.src : ''">
         <button 
           class="mt-3 md:mt-0"
-          x-on:click="selectedImage = selectedImage.slice(13) == 3? 'image-galery-1' : 'image-galery-' + (parseInt(selectedImage.slice(13))+1);">
+          x-on:click="selectedImage = selectedImage.slice(13) == 17? 'image-galery-1' : 'image-galery-' + (parseInt(selectedImage.slice(13))+1);">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
           </svg>
@@ -169,30 +169,30 @@ title: Tischlerei Weißenbek
              class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              data-src="../img/galery/kitchen/20220201_DSCN1579.jpg"
              src="../img/galery/kitchen/20220201_DSCN1579.jpg?width=400px"
-             width="1875"
-             height="2500"
+             width="2500"
+             height="1875"
              alt=""/>
         </a>
       </div>
 
       <div class="inline-block">
         <a 
-            x-on:click="selectedImage = 1" 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
           <img
              x-bind:id="$id('image-galery')" 
              class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
              data-src="../img/galery/kitchen/20220201_DSCN1580.jpg"
              src="../img/galery/kitchen/20220201_DSCN1580.jpg?width=400px"
-             width="1875"
-             height="2500"
+             width="2500"
+             height="1875"
              alt=""/>
         </a>
       </div>
 
       <div class="inline-block">
         <a 
-            x-on:click="selectedImage = 1" 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
           <img
              x-bind:id="$id('image-galery')" 
@@ -206,74 +206,205 @@ title: Tischlerei Weißenbek
       </div>
 
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
+            class="cursor-pointer">
+
+          <img
+             x-bind:id="$id('image-galery')" 
+             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             data-src="../img/galery/kitchen/20220201_DSCN1583.jpg"
              src="../img/galery/kitchen/20220201_DSCN1583.jpg?width=400px"
+             width="2500"
+             height="1875"
              alt=""/>
+        </a>
+
       </div>
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
+            class="cursor-pointer">
+
+          <img
+             x-bind:id="$id('image-galery')" 
+             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             data-src="../img/galery/kitchen/20220201_DSCN1584.jpg"
              src="../img/galery/kitchen/20220201_DSCN1584.jpg?width=400px"
+             width="1875"
+             height="2500"
              alt=""/>
+        </a>
       </div>
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
+            class="cursor-pointer">
+          <img
+             x-bind:id="$id('image-galery')" 
+             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             data-src="../img/galery/kitchen/20220201_DSCN1585.jpg"
              src="../img/galery/kitchen/20220201_DSCN1585.jpg?width=400px"
+             width="2500"
+             height="1875"
              alt=""/>
+        </a>
       </div>
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
+            class="cursor-pointer">
+
+          <img
+             x-bind:id="$id('image-galery')" 
+             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             data-src="../img/galery/kitchen/20220201_DSCN1586.jpg"
              src="../img/galery/kitchen/20220201_DSCN1586.jpg?width=400px"
+             width="2500"
+             height="1875"
              alt=""/>
+        </a>
       </div>
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
+            class="cursor-pointer">
+
+          <img
+             x-bind:id="$id('image-galery')" 
+             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             data-src="../img/galery/kitchen/20220201_DSCN1598.jpg"
              src="../img/galery/kitchen/20220201_DSCN1598.jpg?width=400px"
+             width="2500"
+             height="1875"
              alt=""/>
+        </a>
       </div>
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
+            class="cursor-pointer">
+
+          <img
+             x-bind:id="$id('image-galery')" 
+             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             data-src="../img/galery/kitchen/20220201_DSCN1599.jpg"
              src="../img/galery/kitchen/20220201_DSCN1599.jpg?width=400px"
+             width="1875"
+             height="2500"
              alt=""/>
+        </a>
       </div>
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
+            class="cursor-pointer">
+          <img
+             x-bind:id="$id('image-galery')" 
+             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             data-src="../img/galery/kitchen/20220201_DSCN1670.jpg"
              src="../img/galery/kitchen/20220201_DSCN1670.jpg?width=400px"
+             width="2500"
+             height="1875"
              alt=""/>
+        </a>
       </div>
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
+            class="cursor-pointer">
+
+          <img
+             x-bind:id="$id('image-galery')" 
+             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             data-src="../img/galery/kitchen/20220201_DSCN1671.jpg"
              src="../img/galery/kitchen/20220201_DSCN1671.jpg?width=400px"
+             width="2500"
+             height="1875"
              alt=""/>
+        </a>
       </div>
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
+            class="cursor-pointer">
+
+          <img
+             x-bind:id="$id('image-galery')" 
+             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             data-src="../img/galery/kitchen/20220201_DSCN1673.jpg"
              src="../img/galery/kitchen/20220201_DSCN1673.jpg?width=400px"
+             width="2500"
+             height="1875"
              alt=""/>
+        </a>
       </div>
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
+            class="cursor-pointer">
+          <img
+             x-bind:id="$id('image-galery')" 
+             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             data-src="../img/galery/kitchen/20220201_DSCN1674.jpg"
              src="../img/galery/kitchen/20220201_DSCN1674.jpg?width=400px"
+             width="1875"
+             height="2500"
              alt=""/>
+        </a>
       </div>
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <img
+             x-bind:id="$id('image-galery')" 
+             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             data-src="../img/galery/kitchen/20220201_DSCN1676.jpg"
              src="../img/galery/kitchen/20220201_DSCN1676.jpg?width=400px"
+             width="2500"
+             height="1875"
              alt=""/>
       </div>
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
+            class="cursor-pointer">
+
+          <img
+             x-bind:id="$id('image-galery')" 
+             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             data-src="../img/galery/kitchen/20220202_DSCN1996.jpg"
              src="../img/galery/kitchen/20220202_DSCN1996.jpg?width=400px"
+             width="4608"
+             height="3456"
              alt=""/>
+        </a>
       </div>
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
+            class="cursor-pointer">
+          <img
+             x-bind:id="$id('image-galery')" 
+             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             data-src="../img/galery/kitchen/20220202_DSCN1999.jpg"
              src="../img/galery/kitchen/20220202_DSCN1999.jpg?width=400px"
+             width="4608"
+             height="3456"
              alt=""/>
+        </a>
       </div>
       <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+        <a 
+            x-on:click="selectedImage = $el.childNodes[1].id" 
+            class="cursor-pointer">
+          <img
+             x-bind:id="$id('image-galery')" 
+             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             data-src="../img/galery/kitchen/20220202_DSCN2000.jpg"
              src="../img/galery/kitchen/20220202_DSCN2000.jpg?width=400px"
+             width="4608"
+             height="3456"
              alt=""/>
+        </a>
       </div>
     </div>
 
