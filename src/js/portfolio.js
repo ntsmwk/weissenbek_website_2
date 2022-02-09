@@ -29,13 +29,13 @@ export function portfolio() {
       if (prefix.endsWith('kit-')) {
         return this.imageCountKitchen;
       } else if (prefix.endsWith('din-')) {
-        return this.imageCountKitchen;
+        return this.imageCountDiningRoom;
       } else if (prefix.endsWith('bat-')) {
-        return this.imageCountKitchen;
+        return this.imageCountBathroom;
       } else if (prefix.endsWith('liv-')) {
-        return this.imageCountKitchen;
+        return this.imageCountLivingRoom;
       } else if (prefix.endsWith('ent-')) {
-        return this.imageCountKitchen;
+        return this.imageCountEntrance;
       } else {
         return 1;
       }
