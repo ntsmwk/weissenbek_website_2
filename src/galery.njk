@@ -84,7 +84,7 @@ title: Tischlerei Weißenbek
         x-transition:leave-start="opacity-100 transform scale-100" 
         x-transition:leave-end="opacity-0 transform scale-90" 
         x-on:click.away="selectedImage = -1" 
-        class="p-2 fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center bg-black bg-opacity-75">
+        class="p-2 fixed w-full h-100 inset-0 z-50 overflow-hidden flex bg-black bg-opacity-75">
     <div x-on:click.away="selectedImage = -1" class="flex flex-col h-full w-full">
       <div class="fixed top-0 right-0 z-50">
         <button x-on:click="selectedImage = -1" class="float-right h-20 w-20 pt-2 pr-2 outline-none focus:outline-none">
@@ -93,7 +93,7 @@ title: Tischlerei Weißenbek
           </svg>
         </button>
       </div>
-      <div class="flex flex-row flex-wrap md:flex-nowrap justify-center md:justify-between max-h-screen py-[30px] my-auto">
+      <div class="flex flex-row flex-wrap md:flex-nowrap justify-center md:justify-between md:max-h-screen py-[30px] my-auto">
         <button 
             class="relative md:fixed md:top-1/2 md:left-0 mt-3 md:mt-0"
             x-on:click="selectedImage = selectedImage.slice(13)== 1? 'image-galery-17' : 'image-galery-' + (parseInt(selectedImage.slice(13))-1);">
@@ -101,7 +101,7 @@ title: Tischlerei Weißenbek
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
           </svg>
         </button>
-        <img class="md:max-w-xl lg:max-w-2xl xl:max-w-4xl object-contain order-first md:order-none" 
+        <img class="w-full max-h-[80vh] md:max-w-xl lg:max-w-2xl xl:max-w-4xl object-contain order-first md:order-none" 
              width="1875"
              height="2500"
              x-bind:src="selectedImage != -1 ? document.getElementById(selectedImage).dataset.src : ''">
@@ -118,7 +118,7 @@ title: Tischlerei Weißenbek
 
   <div
       class="container mx-auto px-10 flex flex-col gap-4">
-    <div class="flex flex-row gap-4 justify-center">
+    <div class="flex flex-col lg:flex-row gap-4 justify-center">
       <h4
         x-on:click="selectedCategory = 0"
         class="text-center text-2xl pb-2 px-2 border-b-4 hover:cursor-pointer"
@@ -159,14 +159,14 @@ title: Tischlerei Weißenbek
     {# Kitchen #}
     <div x-show="selectedCategory == 0" 
          x-transition:enter.duration.300ms
-         class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-      <div class="inline-block">
+         class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220201_DSCN1579.jpg"
              src="../img/galery/kitchen/20220201_DSCN1579.jpg?width=400px"
              width="2500"
@@ -175,13 +175,13 @@ title: Tischlerei Weißenbek
         </a>
       </div>
 
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220201_DSCN1580.jpg"
              src="../img/galery/kitchen/20220201_DSCN1580.jpg?width=400px"
              width="2500"
@@ -190,13 +190,13 @@ title: Tischlerei Weißenbek
         </a>
       </div>
 
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220201_DSCN1582.jpg"
              src="../img/galery/kitchen/20220201_DSCN1582.jpg?width=400px"
              width="1875"
@@ -205,14 +205,14 @@ title: Tischlerei Weißenbek
         </a>
       </div>
 
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
 
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220201_DSCN1583.jpg"
              src="../img/galery/kitchen/20220201_DSCN1583.jpg?width=400px"
              width="2500"
@@ -221,14 +221,14 @@ title: Tischlerei Weißenbek
         </a>
 
       </div>
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
 
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220201_DSCN1584.jpg"
              src="../img/galery/kitchen/20220201_DSCN1584.jpg?width=400px"
              width="1875"
@@ -236,13 +236,13 @@ title: Tischlerei Weißenbek
              alt=""/>
         </a>
       </div>
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220201_DSCN1585.jpg"
              src="../img/galery/kitchen/20220201_DSCN1585.jpg?width=400px"
              width="2500"
@@ -250,14 +250,14 @@ title: Tischlerei Weißenbek
              alt=""/>
         </a>
       </div>
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
 
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220201_DSCN1586.jpg"
              src="../img/galery/kitchen/20220201_DSCN1586.jpg?width=400px"
              width="2500"
@@ -265,14 +265,14 @@ title: Tischlerei Weißenbek
              alt=""/>
         </a>
       </div>
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
 
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220201_DSCN1598.jpg"
              src="../img/galery/kitchen/20220201_DSCN1598.jpg?width=400px"
              width="2500"
@@ -280,14 +280,14 @@ title: Tischlerei Weißenbek
              alt=""/>
         </a>
       </div>
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
 
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220201_DSCN1599.jpg"
              src="../img/galery/kitchen/20220201_DSCN1599.jpg?width=400px"
              width="1875"
@@ -295,13 +295,13 @@ title: Tischlerei Weißenbek
              alt=""/>
         </a>
       </div>
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220201_DSCN1670.jpg"
              src="../img/galery/kitchen/20220201_DSCN1670.jpg?width=400px"
              width="2500"
@@ -309,14 +309,14 @@ title: Tischlerei Weißenbek
              alt=""/>
         </a>
       </div>
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
 
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220201_DSCN1671.jpg"
              src="../img/galery/kitchen/20220201_DSCN1671.jpg?width=400px"
              width="2500"
@@ -324,14 +324,14 @@ title: Tischlerei Weißenbek
              alt=""/>
         </a>
       </div>
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
 
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220201_DSCN1673.jpg"
              src="../img/galery/kitchen/20220201_DSCN1673.jpg?width=400px"
              width="2500"
@@ -339,13 +339,13 @@ title: Tischlerei Weißenbek
              alt=""/>
         </a>
       </div>
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220201_DSCN1674.jpg"
              src="../img/galery/kitchen/20220201_DSCN1674.jpg?width=400px"
              width="1875"
@@ -353,24 +353,24 @@ title: Tischlerei Weißenbek
              alt=""/>
         </a>
       </div>
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220201_DSCN1676.jpg"
              src="../img/galery/kitchen/20220201_DSCN1676.jpg?width=400px"
              width="2500"
              height="1875"
              alt=""/>
       </div>
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
 
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220202_DSCN1996.jpg"
              src="../img/galery/kitchen/20220202_DSCN1996.jpg?width=400px"
              width="4608"
@@ -378,13 +378,13 @@ title: Tischlerei Weißenbek
              alt=""/>
         </a>
       </div>
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220202_DSCN1999.jpg"
              src="../img/galery/kitchen/20220202_DSCN1999.jpg?width=400px"
              width="4608"
@@ -392,13 +392,13 @@ title: Tischlerei Weißenbek
              alt=""/>
         </a>
       </div>
-      <div class="inline-block">
+      <div class="inline-block mx-auto">
         <a 
             x-on:click="selectedImage = $el.childNodes[1].id" 
             class="cursor-pointer">
           <img
              x-bind:id="$id('image-galery')" 
-             class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              data-src="../img/galery/kitchen/20220202_DSCN2000.jpg"
              src="../img/galery/kitchen/20220202_DSCN2000.jpg?width=400px"
              width="4608"
@@ -415,99 +415,99 @@ title: Tischlerei Weißenbek
         x-transition:enter.duration.300ms
         class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4"
       >
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_DSCN1964.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_327.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_328.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_329.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_330.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_DSCN0657.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_DSCN0658.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_DSCN0659.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_DSCN0660.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_DSCN0664.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_DSCN0665.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_DSCN0667.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_DSCN1933.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_DSCN1934.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_DSCN1935.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220201_DSCN1936.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220202_DSCN1990.jpg?width=400px"
              alt=""/>
       </div>
 
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220202_DSCN1991.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/dining-room/20220202_DSCN1998.jpg?width=400px"
              alt=""/>
       </div>
@@ -519,58 +519,58 @@ title: Tischlerei Weißenbek
         x-show="selectedCategory == 2" 
         x-transition:enter.duration.300ms
         class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/bathroom/20220201_DSCN1589.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/bathroom/20220201_DSCN1591.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/bathroom/20220201_DSCN1593.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/bathroom/20220201_DSCN1782.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/bathroom/20220201_DSCN1783.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/bathroom/20220201_DSCN1786.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/bathroom/20220202_DSCN2004.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/bathroom/20220202_DSCN2010.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/bathroom/20220202_DSCN2011.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/bathroom/20220202_DSCN2013.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/bathroom/20220202_DSCN2015.jpg?width=400px"
              alt=""/>
       </div>
@@ -583,54 +583,54 @@ title: Tischlerei Weißenbek
         x-transition:enter.duration.300ms
         class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4"
       >
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/living-room/20220201_DSCN0420.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/living-room/20220201_DSCN0422.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/living-room/20220201_DSCN0424.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/living-room/20220201_DSCN0428.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/living-room/20220201_DSCN0431.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/living-room/20220201_DSCN0442.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/living-room/20220201_DSCN0443.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/living-room/20220201_DSCN0444.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/living-room/20220201_DSCN0445.jpg?width=400px"
              alt=""/>
       </div>
 
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/living-room/20220202_DSCN1994.jpg?width=400px"
              alt=""/>
       </div>
@@ -642,78 +642,78 @@ title: Tischlerei Weißenbek
          x-transition:enter.duration.300ms      
          class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4" 
          >
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220201_117.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220201_118.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220201_119.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220201_120.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220201_121.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220201_122.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220201_123.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220201_124.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220201_DSCN1931.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220201_DSCN1928.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220201_DSCN1930.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220201_DSCN1600.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220202_DSCN2008.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220202_DSCN2025.jpg?width=400px"
              alt=""/>
       </div>
-      <div class="inline-block">
-        <img class="w-[275px] min-w-[275px] h-[275px] min-h-[275px]"
+      <div class="inline-block mx-auto">
+        <img class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
              src="../img/galery/entrance/20220202_DSCN2026.jpg?width=400px"
              alt=""/>
       </div>
