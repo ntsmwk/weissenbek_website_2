@@ -6,12 +6,12 @@
     >
       <a href="/">
         <img
-          class="w-80"
+          class="w-36 sm:w-60 md:w-80"
           width="500"
           height="110"
           src="/_site/img/logo.svg"
           alt="Logo of Weissenbek Company"
-/>
+        />
       </a>
       <div class="grow flex flex-row items-center justify-end md:hidden">
         <button
@@ -35,7 +35,7 @@
               stroke-linejoin="round"
               stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16"
-/>
+            />
             <path
               x-cloak
               x-show="dropdown"
@@ -43,12 +43,26 @@
               stroke-linejoin="round"
               stroke-width="2"
               d="M6 18L18 6M6 6l12 12"
-/>
+            />
           </svg>
         </button>
       </div>
       <ul
-        class="hidden my-6 w-full text-right flex flex-col gap-8 md:my-0 md:w-auto md:text-left md:grow md:flex md:flex-row md:gap-4 md:justify-end"
+        x-cloak
+        class="
+          my-6
+          w-full
+          text-right
+          flex flex-col
+          gap-8
+          md:my-0
+          md:w-auto
+          md:text-left
+          md:grow
+          md:flex md:flex-row
+          md:gap-4
+          md:justify-end
+        "
         x-bind:class="{ 'hidden': !dropdown }"
       >
         <li>
