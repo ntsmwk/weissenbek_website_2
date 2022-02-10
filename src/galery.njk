@@ -39,7 +39,7 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
           <img class="block w-full" src="../img/galery/carousel/DSCN0664.jpg?width=1536px" width="2500" height="1369" alt="Image 1">
         </picture>
       </div>
-      <div class="carousel-item relative float-left w-full">
+      <div x-cloak class="carousel-item relative float-left w-full">
         <picture>
           <source media="(min-width: 1536px)" srcset="../img/galery/carousel/DSCN1922.jpg?width=1536px">
           <source media="(min-width: 1280px)" srcset="../img/galery/carousel/DSCN1922.jpg?width=1280px">
@@ -49,7 +49,7 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
           <img class="block w-full" src="../img/galery/carousel/DSCN1922.jpg?width=1536px" width="2500" height="1369" alt="Image 2">
         </picture>
       </div>
-      <div class="carousel-item relative float-left w-full">
+      <div x-cloak class="carousel-item relative float-left w-full">
         <picture>
           <source media="(min-width: 1536px)" srcset="../img/galery/carousel/DSCN1996.jpg?width=1536px">
           <source media="(min-width: 1280px)" srcset="../img/galery/carousel/DSCN1996.jpg?width=1280px">
@@ -83,7 +83,7 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
 
 {# Portfolio #}
 <section x-data="portfolio" id="portfolio" class="py-20">
-  {# Lighthouse Backdrop #}
+  {# Lightbox Backdrop #}
   <div x-cloak
         x-show="selectedImage != -1"
         x-transition:enter="transition ease-out duration-300" 
