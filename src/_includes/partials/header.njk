@@ -63,7 +63,7 @@
           md:gap-4
           md:justify-end
         "
-        x-bind:class="{ 'hidden': !dropdown }"
+        x-bind:class="dropdown ? 'flex' : 'hidden'"
       >
         <li>
           <a class="text-3xl text-[#474444] hover:text-black" href="/"
