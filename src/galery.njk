@@ -12,42 +12,39 @@ title: Tischlerei Weißenbek
       data-bs-slide-to="0"
       class="active"
       aria-current="true"
-      aria-label="Slide 1"
+      aria-label="Image 1"
     ></button>
       <button
       type="button"
       data-bs-target="#galeryCarousel"
       data-bs-slide-to="1"
-      aria-label="Slide 2"
+      aria-label="Image 2"
     ></button>
       <button
       type="button"
       data-bs-target="#galeryCarousel"
       data-bs-slide-to="2"
-      aria-label="Slide 3"
+      aria-label="Image 3"
     ></button>
     </div>
     <div class="carousel-inner relative w-full overflow-hidden">
       <div class="carousel-item active relative float-left w-full">
         <img
-        src="/_site/img/galery/carousel/1_DSCN1971.jpg"
+        src="../img/galery/carousel/DSCN0664.jpg?width=2500px"
         class="block w-full"
-        alt="Slide 1"
-/>
+        alt="Image 1"/>
       </div>
       <div class="carousel-item relative float-left w-full">
         <img
-        src="/_site/img/galery/carousel/2_DSCN1586.jpg"
+        src="../img/galery/carousel/DSCN1922.jpg"
         class="block w-full"
-        alt="Slide 2"
-/>
+        alt="Image 2"/>
       </div>
       <div class="carousel-item relative float-left w-full">
         <img
-        src="/_site/img/galery/carousel/3_DSCN1922.jpg"
+        src="../img/galery/carousel/DSCN1996.jpg"
         class="block w-full"
-        alt="Slide 3"
-/>
+        alt="Image 3"/>
       </div>
     </div>
     <button
@@ -103,7 +100,7 @@ title: Tischlerei Weißenbek
         <img class="w-full max-h-[80vh] md:max-w-xl lg:max-w-2xl xl:max-w-4xl object-contain order-first md:order-none" 
              width="1875"
              height="2500"
-             x-bind:src="selectedImage != -1 ? document.getElementById(selectedImage).dataset.src : ''">
+             x-bind:src="bindSelectedImageToImageTag()">
         <button 
           class="mt-3 md:mt-0"
           x-on:click="forwardButton($event)">

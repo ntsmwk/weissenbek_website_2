@@ -8,6 +8,12 @@ export function portfolio() {
     imageCountLivingRoom: 10,
     imageCountEntrance: 15,
 
+    bindSelectedImageToImageTag: function () {
+      if (this.selectedImage == -1) {
+        return '';
+      }
+      return document.getElementById(this.selectedImage).dataset.src;
+    },
     backButton: function (_event) {
       _event.stopPropagation();
       prefix = this.selectedImage.slice(0, 17);
