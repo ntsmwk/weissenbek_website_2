@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     {% if environment.ELEVENTY_ENV != "production" %}{% endif %}
     <title>{{ title or metadata.title }}</title>
     <meta
       name="description"
       content="{{ description or metadata.description }}"
-/>
-    <link rel="icon" type="image/svg+xml" href="/_site/img/favicon.svg"/>
+    />
+    <link rel="icon" type="image/svg+xml" href="/_site/img/favicon.svg" />
     <script type="module" src="/_site/js/main.js"></script>
     <style>
       [x-cloak] {
         display: none !important;
+      }
+      .font-variant-caps-small-caps {
+        font-variant-caps: small-caps;
       }
     </style>
   </head>

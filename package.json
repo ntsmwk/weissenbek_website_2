@@ -28,6 +28,8 @@
   },
   "dependencies": {
     "@alpinejs/intersect": "^3.8.1",
+    "@fontsource/aldrich": "^4.5.1",
+    "@fontsource/open-sans": "^4.5.4",
     "alpinejs": "^3.8.1",
     "tw-elements": "^1.0.0-alpha9"
   }

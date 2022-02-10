@@ -253,6 +253,16 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@fontsource/aldrich@^4.5.1":
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/aldrich/-/aldrich-4.5.1.tgz#7f4f35e91f8d331b799d010bbeb715c2e6614c0e"
+  integrity sha512-P9l665jtPmCXSzaGD1hSP9QscrkOiAw3MntLf20m0YLWgB9SMtVjyjilzqNKLIluoUoTdNIFcrCIBcMdPoR72Q==
+
+"@fontsource/open-sans@^4.5.4":
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/@fontsource/open-sans/-/open-sans-4.5.4.tgz#dffb63dd504506091a0863ceec632e275d4c04eb"
+  integrity sha512-iaEuU7l3VGA/bqWW9UsBD2bgFwCwDFwKlmOUft4Jps3pD3Zc9POMNYV0+mNyKbA4OIcIice32l+BMif8vY6pdg==
+
 "@hapi/hoek@^9.0.0":
   version "9.2.1"
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.2.1.tgz#9551142a1980503752536b5050fd99f4a7f13b17"

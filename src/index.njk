@@ -2,29 +2,60 @@
 layout: layouts/base.njk
 title: Tischlerei Weißenbek
 description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und Innenausstattungen.
-
 ---
+
 {# Hero #}
 <section
-  class="mb-10 h-screen max-h-[400px] md:max-h-[600px] bg-[url('/_site/img/homepage/hero.jpg?width=640')] md:bg-[url('/_site/img/homepage/hero.jpg?width=960')] xl:bg-[url('/_site/img/homepage/hero.jpg?width=1920')] bg-center bg-cover"
+  class="
+    mb-10
+    h-screen
+    max-h-[400px]
+    md:max-h-[600px]
+    bg-[url('/_site/img/homepage/hero.jpg?width=640')]
+    md:bg-[url('/_site/img/homepage/hero.jpg?width=960')]
+    xl:bg-[url('/_site/img/homepage/hero.jpg?width=1920')]
+    bg-center bg-cover
+  "
 >
   <div class="container-fluid px-10 mx-auto h-full flex bg-black/50">
     <h1
-      class="m-auto max-w-md md:max-w-2xl text-3xl md:text-5xl text-center text-white font-bold drop-shadow"
+      class="
+        m-auto
+        max-w-md
+        md:max-w-2xl
+        text-3xl
+        md:text-5xl
+        text-center text-white
+        font-bold
+        drop-shadow
+      "
     >
       <img
-          class="w-[300px] md:w-[450px] lg:w-[700px] xl:w-[900px]"
-          src="/_site/img/logo.svg"
-          alt="Logo of Weissenbek Company"
-/>
+        class="w-[300px] md:w-[450px] lg:w-[700px] xl:w-[900px]"
+        src="/_site/img/logo.svg"
+        width="328"
+        height="80"
+        alt="Logo of Weissenbek Company"
+      />
     </h1>
   </div>
 </section>
 
 {# Headline #}
-<section class="container mx-auto py-10">
-  <div class="text-center py-6">
-    <p class="text-[#333] font-['Aldrich'] font-bold text-2xl md:text-3xl lg:text-4xl italic">Ihr Tischler des Vertrauens aus Überzeugung</p>
+<section class="container mx-auto py-3 md:py-10">
+  <div class="text-center">
+    <p
+      class="
+        text-[#333]
+        font-['Aldrich'] font-bold font-variant-caps-small-caps
+        text-2xl
+        md:text-3xl
+        lg:text-5xl
+        italic
+      "
+    >
+      Ihr Tischler des Vertrauens aus Überzeugung
+    </p>
   </div>
 </section>
 
@@ -32,18 +63,37 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
 <section class="container mx-auto py-10">
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
     <div class="mx-4 lg:m-0">
-      <img class="rounded" src="/_site/img/homepage/showcase1.jpg?width=1440px"
-       alt="">
+      <img
+        class="rounded"
+        src="/_site/img/homepage/showcase1.jpg?width=760px"
+        width="3456"
+        height="3383"
+        alt=""
+      />
       <div class="my-3">
-        <h2 class="text-[#333] text-2xl font-semibold"> Möbel &amp; Design </h2>
-        <p class="text-[#666666] text-lg"> Professionelle und qualitätsorientierte Herstellung aus eigener Hand für ihre individuelle Raumgestaltung. </p>
+        <h2 class="text-[#333] text-2xl font-semibold">Möbel &amp; Design</h2>
+        <p class="text-[#666666] text-lg">
+          Professionelle und qualitätsorientierte Herstellung aus eigener Hand
+          für ihre individuelle Raumgestaltung.
+        </p>
       </div>
     </div>
     <div class="mx-4 lg:m-0">
-      <img class="rounded" src="/_site/img/homepage/showcase2.jpg?width=1440px" alt="">
+      <img
+        class="rounded"
+        src="/_site/img/homepage/showcase2.jpg?width=760px"
+        width="1713"
+        height="1676"
+        alt=""
+      />
       <div class="my-3">
-        <h2 class="text-[#333] text-2xl font-semibold"> Energetik &amp; Radiästhesie </h2>
-        <p class="text-[#666666] text-lg">  Mit Hilfe von Rute und Pendel die Störung von Wasseradern und Erdstrahlen erkennen sowie Austesten von Schlafplätzen. </p>
+        <h2 class="text-[#333] text-2xl font-semibold">
+          Energetik &amp; Radiästhesie
+        </h2>
+        <p class="text-[#666666] text-lg">
+          Mit Hilfe von Rute und Pendel die Störung von Wasseradern und
+          Erdstrahlen erkennen sowie Austesten von Schlafplätzen.
+        </p>
       </div>
     </div>
   </div>
@@ -57,8 +107,10 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
         <img
           class="w-[40%]"
           src="/_site/img/homepage/portfolio-overview/kitchen-icon.svg"
+          width="512"
+          height="512"
           alt="Icon of Kitchen"
-/>
+        />
       </div>
       <div class="flex flex-row justify-center pt-2">
         <h3 class="text-3xl text-bold">Küche</h3>
@@ -69,8 +121,10 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
         <img
           class="w-[40%]"
           src="/_site/img/homepage/portfolio-overview/bathroom-icon.svg"
+          width="512"
+          height="512"
           alt="Icon of Bathroom"
-/>
+        />
       </div>
       <div class="flex flex-row justify-center pt-2">
         <h3 class="text-3xl text-bold">Badezimmer</h3>
@@ -82,8 +136,10 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
         <img
           class="w-[40%]"
           src="/_site/img/homepage/portfolio-overview/livingroom-icon.svg"
+          width="463"
+          height="463"
           alt="Icon of Livingroom"
-/>
+        />
       </div>
       <div class="flex flex-row justify-center pt-2">
         <h3 class="text-3xl text-bold">Wohnzimmer</h3>
@@ -95,8 +151,10 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
         <img
           class="w-[40%]"
           src="/_site/img/homepage/portfolio-overview/bedroom-icon.svg"
+          width="512"
+          height="512"
           alt="Icon of Bedroom"
-/>
+        />
       </div>
       <div class="flex flex-row justify-center pt-2">
         <h3 class="text-3xl text-bold">Schlafzimmer</h3>
@@ -109,33 +167,62 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
 <section class="overflow-hidden mt-[15px] text-gray-700 py-10">
   <div class="container py-2 mx-auto">
     <div class="flex flex-wrap -m-1 md:-m-2">
-      <div class="flex flex-wrap w-1/2">
+      <div class="flex flex-wrap w-full lg:w-1/2">
         <div class="w-1/2 p-1 md:p-2">
-          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-            src="/_site/img/homepage/image-overview/einzelstueck2.jpg">
+          <img
+            class="block object-cover object-center w-full h-full rounded-lg"
+            src="/_site/img/homepage/image-overview/einzelstueck2.jpg?width=316px"
+            width="3456"
+            height="4608"
+            alt="gallery"
+          />
         </div>
         <div class="w-1/2 p-1 md:p-2">
-          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-            src="/_site/img/homepage/image-overview/einzelstueck1.jpg">
+          <img
+            alt="gallery"
+            class="block object-cover object-center w-full h-full rounded-lg"
+            src="/_site/img/homepage/image-overview/einzelstueck1.jpg?width=316px"
+            width="3456"
+            height="3944"
+          />
         </div>
         <div class="w-full p-1 md:p-2">
-          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-            src="/_site/img/homepage/image-overview/bad.jpg">
+          <img
+            alt="gallery"
+            class="block object-cover object-center w-full h-full rounded-lg"
+            src="/_site/img/homepage/image-overview/bad.jpg?width=640px"
+            width="1875"
+            height="2500"
+          />
         </div>
       </div>
-      <div class="flex flex-wrap w-1/2">
+      <div class="flex flex-wrap w-full lg:w-1/2">
         <div class="w-full p-1 md:p-2">
-          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-            src="/_site/img/homepage/image-overview/living-room.jpg">
-
+          <img
+            alt="gallery"
+            class="block object-cover object-center w-full h-full rounded-lg"
+            src="/_site/img/homepage/image-overview/living-room.jpg?width=640px"
+            width="1875"
+            height="2500"
+          />
         </div>
         <div class="w-1/2 p-1 md:p-2">
-          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-            src="/_site/img/homepage/image-overview/plan.jpg">
+          <img
+            alt="gallery"
+            class="block object-cover object-center w-full h-full rounded-lg"
+            src="/_site/img/homepage/image-overview/plan.jpg?width=316px"
+            width="2500"
+            height="1783"
+          />
         </div>
         <div class="w-1/2 p-1 md:p-2">
-          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-              src="/_site/img/homepage/image-overview/filler.jpg">
+          <img
+            alt="gallery"
+            class="block object-cover object-center w-full h-full rounded-lg"
+            src="/_site/img/homepage/image-overview/filler.jpg?width=316px"
+            width="800"
+            height="800"
+          />
         </div>
       </div>
     </div>
