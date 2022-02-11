@@ -5,13 +5,26 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
 ---
 
 {# Carousel #}
-<section x-data="carousel" x-init="initialize()" class="container mx-auto">
-  <div class="relative">
-    <div class="absolute top-1/2 left-0">
-      <button class="mt-3 md:mt-0" x-on:click="backButton($event)">
+<section x-data="carousel" x-init="initialize()" class="container mx-auto overflow-hidden">
+  <div
+    class="
+      relative
+      overflow-hidden
+      h-[164px]
+      2xs:h-[238px]
+      xs:h-[315px]
+      sm:h-[350px]
+      md:h-[421px]
+      lg:h-[561px]
+      xl:h-[701px]
+      2xl:h-[841px]
+    "
+  >
+    <div class="flex absolute top-0 left-0 h-full z-50">
+      <button class="my-auto" x-on:click="backButton($event)">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-20 w-20 text-black"
+          class="h-10 w-10 md:h-20 md:w-20 text-black"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -25,11 +38,11 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
         </svg>
       </button>
     </div>
-    <div class="absolute top-1/2 right-0">
-      <button class="mt-3 md:mt-0" x-on:click="forwardButton($event)">
+    <div class="flex absolute top-0 right-0 h-full z-50">
+      <button class="my-auto" x-on:click="forwardButton($event)">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-20 w-20 text-black"
+          class="h-10 w-10 md:h-20 md:w-20 text-black"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -39,7 +52,16 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
       </button>
     </div>
 
-    <div x-show="currentImage == 1">
+    <div
+      class="absolute inset-0"
+      x-show="currentImage == 1"
+      x-transition:enter="transition ease-in-out duration-500 "
+      x-transition:enter-start="-translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition ease-in-out duration-500"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="translate-x-full"
+    >
       <picture>
         <source
           media="(min-width: 1536px)"
@@ -62,7 +84,7 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
           srcset="../img/galery/carousel/DSCN0664.jpg?width=640px"
         />
         <img
-          class="block w-full"
+          class="w-full"
           src="../img/galery/carousel/DSCN0664.jpg?width=1536px"
           width="2500"
           height="1369"
@@ -70,7 +92,17 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
         />
       </picture>
     </div>
-    <div x-cloak x-show="currentImage == 2">
+    <div
+      x-cloak
+      class="absolute inset-0"
+      x-show="currentImage == 2"
+      x-transition:enter="transition ease-in-out duration-500"
+      x-transition:enter-start="-translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition ease-in-out duration-500"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="translate-x-full"
+    >
       <picture>
         <source
           media="(min-width: 1536px)"
@@ -93,7 +125,7 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
           srcset="../img/galery/carousel/DSCN1922.jpg?width=640px"
         />
         <img
-          class="block w-full"
+          class="w-full"
           src="../img/galery/carousel/DSCN1922.jpg?width=1536px"
           width="2500"
           height="1369"
@@ -101,7 +133,17 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
         />
       </picture>
     </div>
-    <div x-cloak x-show="currentImage == 3">
+    <div
+      x-cloak
+      class="absolute inset-0"
+      x-show="currentImage == 3"
+      x-transition:enter="transition ease-in-out duration-500"
+      x-transition:enter-start="-translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition ease-in-out duration-500"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="translate-x-full"
+    >
       <picture>
         <source
           media="(min-width: 1536px)"
@@ -124,7 +166,7 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
           srcset="../img/galery/carousel/DSCN1996.jpg?width=640px"
         />
         <img
-          class="block w-full"
+          class="w-full"
           src="../img/galery/carousel/DSCN1996.jpg?width=1536px"
           width="4608"
           height="2524"
@@ -136,7 +178,7 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
 </section>
 
 {# Portfolio #}
-<section x-data="portfolio" id="portfolio" class="py-20">
+<section x-data="portfolio" id="portfolio" class="py-10">
   {# Lightbox Backdrop #}
   <div
     x-cloak

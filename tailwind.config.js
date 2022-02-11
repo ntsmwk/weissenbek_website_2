@@ -2,10 +2,14 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   theme: {
-    extend: {
-      fontFamily: {
-        'sans': ["'Open Sans'", ...defaultTheme.fontFamily.sans],
-      },
+    screens: {
+      '3xs': '300px',
+      '2xs': '436px',
+      'xs': '576px',
+      ...defaultTheme.screens,
+    },
+    fontFamily: {
+      'sans': ["'Open Sans'", ...defaultTheme.fontFamily.sans],
     },
   },
   content: [
