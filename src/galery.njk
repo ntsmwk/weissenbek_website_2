@@ -4,129 +4,178 @@ title: Tischlerei Weißenbek
 description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und Innenausstattungen.
 ---
 
-<section x-data="{}" class="container mx-auto">
-  <div id="galeryCarousel" class="carousel slide relative" data-bs-ride="carousel">
-    <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-      <button
-      type="button"
-      data-bs-target="#galeryCarousel"
-      data-bs-slide-to="0"
-      class="active"
-      aria-current="true"
-      aria-label="Image 1"
-    ></button>
-      <button
-      type="button"
-      data-bs-target="#galeryCarousel"
-      data-bs-slide-to="1"
-      aria-label="Image 2"
-    ></button>
-      <button
-      type="button"
-      data-bs-target="#galeryCarousel"
-      data-bs-slide-to="2"
-      aria-label="Image 3"
-    ></button>
-    </div>
-    <div class="carousel-inner relative w-full overflow-hidden">
-      <div class="carousel-item active relative float-left w-full">
-        <picture>
-          <source media="(min-width: 1536px)" srcset="../img/galery/carousel/DSCN0664.jpg?width=1536px">
-          <source media="(min-width: 1280px)" srcset="../img/galery/carousel/DSCN0664.jpg?width=1280px">
-          <source media="(min-width: 1024px)" srcset="../img/galery/carousel/DSCN0664.jpg?width=1024px">
-          <source media="(min-width: 768px)" srcset="../img/galery/carousel/DSCN0664.jpg?width=768px">
-          <source media="(min-width: 640px)" srcset="../img/galery/carousel/DSCN0664.jpg?width=640px">
-          <img class="block w-full" src="../img/galery/carousel/DSCN0664.jpg?width=1536px" width="2500" height="1369" alt="Image 1">
-        </picture>
-      </div>
-      <div x-cloak class="carousel-item relative float-left w-full">
-        <picture>
-          <source media="(min-width: 1536px)" srcset="../img/galery/carousel/DSCN1922.jpg?width=1536px">
-          <source media="(min-width: 1280px)" srcset="../img/galery/carousel/DSCN1922.jpg?width=1280px">
-          <source media="(min-width: 1024px)" srcset="../img/galery/carousel/DSCN1922.jpg?width=1024px">
-          <source media="(min-width: 768px)" srcset="../img/galery/carousel/DSCN1922.jpg?width=768px">
-          <source media="(min-width: 640px)" srcset="../img/galery/carousel/DSCN1922.jpg?width=640px">
-          <img class="block w-full" src="../img/galery/carousel/DSCN1922.jpg?width=1536px" width="2500" height="1369" alt="Image 2">
-        </picture>
-      </div>
-      <div x-cloak class="carousel-item relative float-left w-full">
-        <picture>
-          <source media="(min-width: 1536px)" srcset="../img/galery/carousel/DSCN1996.jpg?width=1536px">
-          <source media="(min-width: 1280px)" srcset="../img/galery/carousel/DSCN1996.jpg?width=1280px">
-          <source media="(min-width: 1024px)" srcset="../img/galery/carousel/DSCN1996.jpg?width=1024px">
-          <source media="(min-width: 768px)" srcset="../img/galery/carousel/DSCN1996.jpg?width=768px">
-          <source media="(min-width: 640px)" srcset="../img/galery/carousel/DSCN1996.jpg?width=640px">
-          <img class="block w-full" src="../img/galery/carousel/DSCN1996.jpg?width=1536px" width="4608" height="2524" alt="Image 3">
-        </picture>
-      </div>
-    </div>
-    <button
-    class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
-    type="button"
-    data-bs-target="#galeryCarousel"
-    data-bs-slide="prev"
-  >
-      <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-    class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
-    type="button"
-    data-bs-target="#galeryCarousel"
-    data-bs-slide="next"
-  >
-      <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+<section x-data="carousel" x-init="initialize()" class="container mx-auto">
+  <div x-show="currentImage == 1">
+    <picture>
+      <source
+        media="(min-width: 1536px)"
+        srcset="../img/galery/carousel/DSCN0664.jpg?width=1536px"
+      />
+      <source
+        media="(min-width: 1280px)"
+        srcset="../img/galery/carousel/DSCN0664.jpg?width=1280px"
+      />
+      <source
+        media="(min-width: 1024px)"
+        srcset="../img/galery/carousel/DSCN0664.jpg?width=1024px"
+      />
+      <source media="(min-width: 768px)" srcset="../img/galery/carousel/DSCN0664.jpg?width=768px" />
+      <source media="(min-width: 640px)" srcset="../img/galery/carousel/DSCN0664.jpg?width=640px" />
+      <img
+        class="block w-full"
+        src="../img/galery/carousel/DSCN0664.jpg?width=1536px"
+        width="2500"
+        height="1369"
+        alt="Image 1"
+      />
+    </picture>
+  </div>
+  <div x-cloak x-show="currentImage == 2">
+    <picture>
+      <source
+        media="(min-width: 1536px)"
+        srcset="../img/galery/carousel/DSCN1922.jpg?width=1536px"
+      />
+      <source
+        media="(min-width: 1280px)"
+        srcset="../img/galery/carousel/DSCN1922.jpg?width=1280px"
+      />
+      <source
+        media="(min-width: 1024px)"
+        srcset="../img/galery/carousel/DSCN1922.jpg?width=1024px"
+      />
+      <source media="(min-width: 768px)" srcset="../img/galery/carousel/DSCN1922.jpg?width=768px" />
+      <source media="(min-width: 640px)" srcset="../img/galery/carousel/DSCN1922.jpg?width=640px" />
+      <img
+        class="block w-full"
+        src="../img/galery/carousel/DSCN1922.jpg?width=1536px"
+        width="2500"
+        height="1369"
+        alt="Image 2"
+      />
+    </picture>
+  </div>
+  <div x-cloak x-show="currentImage == 3">
+    <picture>
+      <source
+        media="(min-width: 1536px)"
+        srcset="../img/galery/carousel/DSCN1996.jpg?width=1536px"
+      />
+      <source
+        media="(min-width: 1280px)"
+        srcset="../img/galery/carousel/DSCN1996.jpg?width=1280px"
+      />
+      <source
+        media="(min-width: 1024px)"
+        srcset="../img/galery/carousel/DSCN1996.jpg?width=1024px"
+      />
+      <source media="(min-width: 768px)" srcset="../img/galery/carousel/DSCN1996.jpg?width=768px" />
+      <source media="(min-width: 640px)" srcset="../img/galery/carousel/DSCN1996.jpg?width=640px" />
+      <img
+        class="block w-full"
+        src="../img/galery/carousel/DSCN1996.jpg?width=1536px"
+        width="4608"
+        height="2524"
+        alt="Image 3"
+      />
+    </picture>
   </div>
 </section>
 
-{# Portfolio #}
+ {# Portfolio #}
 <section x-data="portfolio" id="portfolio" class="py-20">
   {# Lightbox Backdrop #}
-  <div x-cloak
-        x-show="selectedImage != -1"
-        x-transition:enter="transition ease-out duration-300" 
-        x-transition:enter-start="opacity-0 transform scale-90" 
-        x-transition:enter-end="opacity-100 transform scale-100" 
-        x-transition:leave="transition ease-in duration-300" 
-        x-transition:leave-start="opacity-100 transform scale-100" 
-        x-transition:leave-end="opacity-0 transform scale-90" 
-        class="p-2 fixed w-full h-100 inset-0 z-50 overflow-hidden flex bg-black bg-opacity-75">
-    <div x-on:click="selectedImage= -1"
-         class="flex flex-col h-full w-full">
+  <div
+    x-cloak
+    x-show="selectedImage != -1"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 transform scale-90"
+    x-transition:enter-end="opacity-100 transform scale-100"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-100 transform scale-100"
+    x-transition:leave-end="opacity-0 transform scale-90"
+    class="p-2 fixed w-full h-100 inset-0 z-50 overflow-hidden flex bg-black bg-opacity-75"
+  >
+    <div x-on:click="selectedImage= -1" class="flex flex-col h-full w-full">
       <div class="fixed top-0 right-0 z-50">
-        <button x-on:click="selectedImage = -1" class="float-right h-20 w-20 pt-2 pr-2 outline-none focus:outline-none">
-          <svg class="fill-current text-white " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+        <button
+          x-on:click="selectedImage = -1"
+          class="float-right h-20 w-20 pt-2 pr-2 outline-none focus:outline-none"
+        >
+          <svg
+            class="fill-current text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
+            ></path>
           </svg>
         </button>
       </div>
-      <div class="flex flex-row flex-wrap md:flex-nowrap justify-center md:justify-between md:max-h-screen py-[30px] my-auto">
-        <button 
-            class="mt-3 md:mt-0"
-            x-on:click="backButton($event)">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      <div
+        class="
+          flex flex-row flex-wrap
+          md:flex-nowrap
+          justify-center
+          md:justify-between
+          md:max-h-screen
+          py-[30px]
+          my-auto
+        "
+      >
+        <button class="mt-3 md:mt-0" x-on:click="backButton($event)">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-24 w-24 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
         </button>
-        <img class="w-full max-h-[80vh] md:max-w-xl lg:max-w-2xl xl:max-w-4xl object-contain order-first md:order-none" 
-             width="1875"
-             height="2500"
-             x-bind:src="bindSelectedImageToImageTag()">
-        <button 
-          class="mt-3 md:mt-0"
-          x-on:click="forwardButton($event)">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        <img
+          class="
+            w-full
+            max-h-[80vh]
+            md:max-w-xl
+            lg:max-w-2xl
+            xl:max-w-4xl
+            object-contain
+            order-first
+            md:order-none
+          "
+          width="1875"
+          height="2500"
+          x-bind:src="bindSelectedImageToImageTag()"
+        />
+        <button class="mt-3 md:mt-0" x-on:click="forwardButton($event)">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-24 w-24 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
           </svg>
         </button>
       </div>
     </div>
   </div>
 
-  <div
-      class="container mx-auto px-10 flex flex-col gap-4">
+  <div class="container mx-auto px-10 flex flex-col gap-4">
     <div class="flex flex-col lg:flex-row gap-4 justify-center">
       <h4
         x-on:click="selectedCategory = 0"
@@ -166,1097 +215,1030 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
     </div>
 
     {# Kitchen #}
-    <div x-show="selectedCategory == 0" 
-         x-transition:enter.duration.300ms
-         class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div
+      x-show="selectedCategory == 0"
+      x-transition:enter.duration.300ms
+      class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+    >
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220201_DSCN1579.jpg"
-             data-srcpreview="../img/galery/kitchen/20220201_DSCN1579.jpg?width=400px"
-             width="2500"
-             height="1875"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220201_DSCN1579.jpg"
+            data-srcpreview="../img/galery/kitchen/20220201_DSCN1579.jpg?width=400px"
+            width="2500"
+            height="1875"
+            alt=""
+          />
         </a>
       </div>
 
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220201_DSCN1580.jpg"
-             data-srcpreview="../img/galery/kitchen/20220201_DSCN1580.jpg?width=400px"
-             width="2500"
-             height="1875"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220201_DSCN1580.jpg"
+            data-srcpreview="../img/galery/kitchen/20220201_DSCN1580.jpg?width=400px"
+            width="2500"
+            height="1875"
+            alt=""
+          />
         </a>
       </div>
 
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220201_DSCN1582.jpg"
-             data-srcpreview="../img/galery/kitchen/20220201_DSCN1582.jpg?width=400px"
-             width="1875"
-             height="2500"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220201_DSCN1582.jpg"
+            data-srcpreview="../img/galery/kitchen/20220201_DSCN1582.jpg?width=400px"
+            width="1875"
+            height="2500"
+            alt=""
+          />
         </a>
       </div>
 
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220201_DSCN1583.jpg"
-             data-srcpreview="../img/galery/kitchen/20220201_DSCN1583.jpg?width=400px"
-             width="2500"
-             height="1875"
-             alt=""/>
-        </a>
-
-      </div>
-      <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
-          <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220201_DSCN1584.jpg"
-             data-srcpreview="../img/galery/kitchen/20220201_DSCN1584.jpg?width=400px"
-             width="1875"
-             height="2500"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220201_DSCN1583.jpg"
+            data-srcpreview="../img/galery/kitchen/20220201_DSCN1583.jpg?width=400px"
+            width="2500"
+            height="1875"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220201_DSCN1585.jpg"
-             data-srcpreview="../img/galery/kitchen/20220201_DSCN1585.jpg?width=400px"
-             width="2500"
-             height="1875"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220201_DSCN1584.jpg"
+            data-srcpreview="../img/galery/kitchen/20220201_DSCN1584.jpg?width=400px"
+            width="1875"
+            height="2500"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220201_DSCN1586.jpg"
-             data-srcpreview="../img/galery/kitchen/20220201_DSCN1586.jpg?width=400px"
-             width="2500"
-             height="1875"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220201_DSCN1585.jpg"
+            data-srcpreview="../img/galery/kitchen/20220201_DSCN1585.jpg?width=400px"
+            width="2500"
+            height="1875"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
-
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220201_DSCN1598.jpg"
-             data-srcpreview="../img/galery/kitchen/20220201_DSCN1598.jpg?width=400px"
-             width="2500"
-             height="1875"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220201_DSCN1586.jpg"
+            data-srcpreview="../img/galery/kitchen/20220201_DSCN1586.jpg?width=400px"
+            width="2500"
+            height="1875"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220201_DSCN1599.jpg"
-             data-srcpreview="../img/galery/kitchen/20220201_DSCN1599.jpg?width=400px"
-             width="1875"
-             height="2500"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220201_DSCN1598.jpg"
+            data-srcpreview="../img/galery/kitchen/20220201_DSCN1598.jpg?width=400px"
+            width="2500"
+            height="1875"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220201_DSCN1670.jpg"
-             data-srcpreview="../img/galery/kitchen/20220201_DSCN1670.jpg?width=400px"
-             width="2500"
-             height="1875"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220201_DSCN1599.jpg"
+            data-srcpreview="../img/galery/kitchen/20220201_DSCN1599.jpg?width=400px"
+            width="1875"
+            height="2500"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220201_DSCN1671.jpg"
-             data-srcpreview="../img/galery/kitchen/20220201_DSCN1671.jpg?width=400px"
-             width="2500"
-             height="1875"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220201_DSCN1670.jpg"
+            data-srcpreview="../img/galery/kitchen/20220201_DSCN1670.jpg?width=400px"
+            width="2500"
+            height="1875"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220201_DSCN1673.jpg"
-             data-srcpreview="../img/galery/kitchen/20220201_DSCN1673.jpg?width=400px"
-             width="2500"
-             height="1875"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220201_DSCN1671.jpg"
+            data-srcpreview="../img/galery/kitchen/20220201_DSCN1671.jpg?width=400px"
+            width="2500"
+            height="1875"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220201_DSCN1674.jpg"
-             data-srcpreview="../img/galery/kitchen/20220201_DSCN1674.jpg?width=400px"
-             width="1875"
-             height="2500"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220201_DSCN1673.jpg"
+            data-srcpreview="../img/galery/kitchen/20220201_DSCN1673.jpg?width=400px"
+            width="2500"
+            height="1875"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="inline-block mx-auto">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
+          <img
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220201_DSCN1674.jpg"
+            data-srcpreview="../img/galery/kitchen/20220201_DSCN1674.jpg?width=400px"
+            width="1875"
+            height="2500"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
         <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220201_DSCN1676.jpg"
-             data-srcpreview="../img/galery/kitchen/20220201_DSCN1676.jpg?width=400px"
-             width="2500"
-             height="1875"
-             alt=""/>
+          x-bind:id="$id('image-galery-kit')"
+          x-intersect.once="$el.src = $el.dataset.srcpreview"
+          class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+          data-src="../img/galery/kitchen/20220201_DSCN1676.jpg"
+          data-srcpreview="../img/galery/kitchen/20220201_DSCN1676.jpg?width=400px"
+          width="2500"
+          height="1875"
+          alt=""
+        />
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220202_DSCN1996.jpg"
-             data-srcpreview="../img/galery/kitchen/20220202_DSCN1996.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220202_DSCN1996.jpg"
+            data-srcpreview="../img/galery/kitchen/20220202_DSCN1996.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220202_DSCN1999.jpg"
-             data-srcpreview="../img/galery/kitchen/20220202_DSCN1999.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220202_DSCN1999.jpg"
+            data-srcpreview="../img/galery/kitchen/20220202_DSCN1999.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-kit')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/kitchen/20220202_DSCN2000.jpg"
-             data-srcpreview="../img/galery/kitchen/20220202_DSCN2000.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-kit')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/kitchen/20220202_DSCN2000.jpg"
+            data-srcpreview="../img/galery/kitchen/20220202_DSCN2000.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
     </div>
 
     {# Dining Room #}
-    <div 
-         x-cloak
-         x-show="selectedCategory == 1" 
-         x-transition:enter.duration.300ms
-         class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-
+    <div
+      x-cloak
+      x-show="selectedCategory == 1"
+      x-transition:enter.duration.300ms
+      class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+    >
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220201_DSCN1964.jpg"
-             data-srcpreview="../img/galery/dining-room/20220201_DSCN1964.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220201_DSCN1964.jpg"
+            data-srcpreview="../img/galery/dining-room/20220201_DSCN1964.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220201_327.jpg"
-             data-srcpreview="../img/galery/dining-room/20220201_327.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220201_327.jpg"
+            data-srcpreview="../img/galery/dining-room/20220201_327.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220201_328.jpg"
-             data-srcpreview="../img/galery/dining-room/20220201_328.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220201_328.jpg"
+            data-srcpreview="../img/galery/dining-room/20220201_328.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220201_329.jpg"
-             data-srcpreview="../img/galery/dining-room/20220201_329.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220201_329.jpg"
+            data-srcpreview="../img/galery/dining-room/20220201_329.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220201_330.jpg"
-             data-srcpreview="../img/galery/dining-room/20220201_330.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220201_330.jpg"
+            data-srcpreview="../img/galery/dining-room/20220201_330.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220201_DSCN0657.jpg"
-             data-srcpreview="../img/galery/dining-room/20220201_DSCN0657.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220201_DSCN0657.jpg"
+            data-srcpreview="../img/galery/dining-room/20220201_DSCN0657.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220201_DSCN0658.jpg"
-             data-srcpreview="../img/galery/dining-room/20220201_DSCN0658.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220201_DSCN0658.jpg"
+            data-srcpreview="../img/galery/dining-room/20220201_DSCN0658.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220201_DSCN0664.jpg"
-             data-srcpreview="../img/galery/dining-room/20220201_DSCN0664.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220201_DSCN0664.jpg"
+            data-srcpreview="../img/galery/dining-room/20220201_DSCN0664.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220201_DSCN0665.jpg"
-             data-srcpreview="../img/galery/dining-room/20220201_DSCN0665.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220201_DSCN0665.jpg"
+            data-srcpreview="../img/galery/dining-room/20220201_DSCN0665.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220201_DSCN0667.jpg"
-             data-srcpreview="../img/galery/dining-room/20220201_DSCN0667.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220201_DSCN0667.jpg"
+            data-srcpreview="../img/galery/dining-room/20220201_DSCN0667.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220201_DSCN1933.jpg"
-             data-srcpreview="../img/galery/dining-room/20220201_DSCN1933.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220201_DSCN1933.jpg"
+            data-srcpreview="../img/galery/dining-room/20220201_DSCN1933.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220201_DSCN1934.jpg"
-             data-srcpreview="../img/galery/dining-room/20220201_DSCN1934.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220201_DSCN1934.jpg"
+            data-srcpreview="../img/galery/dining-room/20220201_DSCN1934.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220201_DSCN1935.jpg"
-             data-srcpreview="../img/galery/dining-room/20220201_DSCN1935.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220201_DSCN1935.jpg"
+            data-srcpreview="../img/galery/dining-room/20220201_DSCN1935.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220201_DSCN1936.jpg"
-             data-srcpreview="../img/galery/dining-room/20220201_DSCN1936.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220201_DSCN1936.jpg"
+            data-srcpreview="../img/galery/dining-room/20220201_DSCN1936.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220202_DSCN1990.jpg"
-             data-srcpreview="../img/galery/dining-room/20220202_DSCN1990.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220202_DSCN1990.jpg"
+            data-srcpreview="../img/galery/dining-room/20220202_DSCN1990.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
 
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220202_DSCN1991.jpg"
-             data-srcpreview="../img/galery/dining-room/20220202_DSCN1991.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220202_DSCN1991.jpg"
+            data-srcpreview="../img/galery/dining-room/20220202_DSCN1991.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-din')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/dining-room/20220202_DSCN1998.jpg"
-             data-srcpreview="../img/galery/dining-room/20220202_DSCN1998.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-din')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/dining-room/20220202_DSCN1998.jpg"
+            data-srcpreview="../img/galery/dining-room/20220202_DSCN1998.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
     </div>
 
     {# Bathroom #}
-    <div 
-        x-cloak
-        x-show="selectedCategory == 2" 
-        x-transition:enter.duration.300ms
-        class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div
+      x-cloak
+      x-show="selectedCategory == 2"
+      x-transition:enter.duration.300ms
+      class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+    >
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-bat')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/bathroom/20220201_DSCN1589.jpg"
-             data-srcpreview="../img/galery/bathroom/20220201_DSCN1589.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-bat')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/bathroom/20220201_DSCN1589.jpg"
+            data-srcpreview="../img/galery/bathroom/20220201_DSCN1589.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-bat')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/bathroom/20220201_DSCN1591.jpg"
-             data-srcpreview="../img/galery/bathroom/20220201_DSCN1591.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-bat')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/bathroom/20220201_DSCN1591.jpg"
+            data-srcpreview="../img/galery/bathroom/20220201_DSCN1591.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-bat')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/bathroom/20220201_DSCN1593.jpg"
-             data-srcpreview="../img/galery/bathroom/20220201_DSCN1593.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-bat')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/bathroom/20220201_DSCN1593.jpg"
+            data-srcpreview="../img/galery/bathroom/20220201_DSCN1593.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-bat')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/bathroom/20220201_DSCN1782.jpg"
-             data-srcpreview="../img/galery/bathroom/20220201_DSCN1782.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-bat')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/bathroom/20220201_DSCN1782.jpg"
+            data-srcpreview="../img/galery/bathroom/20220201_DSCN1782.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-bat')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/bathroom/20220201_DSCN1783.jpg"
-             data-srcpreview="../img/galery/bathroom/20220201_DSCN1783.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-bat')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/bathroom/20220201_DSCN1783.jpg"
+            data-srcpreview="../img/galery/bathroom/20220201_DSCN1783.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-bat')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/bathroom/20220201_DSCN1786.jpg"
-             data-srcpreview="../img/galery/bathroom/20220201_DSCN1786.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-bat')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/bathroom/20220201_DSCN1786.jpg"
+            data-srcpreview="../img/galery/bathroom/20220201_DSCN1786.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-bat')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/bathroom/20220202_DSCN2004.jpg"
-             data-srcpreview="../img/galery/bathroom/20220202_DSCN2004.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-bat')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/bathroom/20220202_DSCN2004.jpg"
+            data-srcpreview="../img/galery/bathroom/20220202_DSCN2004.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-bat')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/bathroom/20220202_DSCN2010.jpg"
-             data-srcpreview="../img/galery/bathroom/20220202_DSCN2010.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-bat')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/bathroom/20220202_DSCN2010.jpg"
+            data-srcpreview="../img/galery/bathroom/20220202_DSCN2010.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-bat')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/bathroom/20220202_DSCN2011.jpg"
-             data-srcpreview="../img/galery/bathroom/20220202_DSCN2011.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-bat')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/bathroom/20220202_DSCN2011.jpg"
+            data-srcpreview="../img/galery/bathroom/20220202_DSCN2011.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-bat')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/bathroom/20220202_DSCN2013.jpg"
-             data-srcpreview="../img/galery/bathroom/20220202_DSCN2013.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-bat')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/bathroom/20220202_DSCN2013.jpg"
+            data-srcpreview="../img/galery/bathroom/20220202_DSCN2013.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-bat')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/bathroom/20220202_DSCN2015.jpg"
-             data-srcpreview="../img/galery/bathroom/20220202_DSCN2015.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-bat')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/bathroom/20220202_DSCN2015.jpg"
+            data-srcpreview="../img/galery/bathroom/20220202_DSCN2015.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
     </div>
 
     {# Living Room #}
-    <div 
-        x-cloak
-        x-show="selectedCategory == 3"
-        x-transition:enter.duration.300ms
-        class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
-      >
+    <div
+      x-cloak
+      x-show="selectedCategory == 3"
+      x-transition:enter.duration.300ms
+      class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+    >
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-liv')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/living-room/20220201_DSCN0420.jpg"
-             data-srcpreview="../img/galery/living-room/20220201_DSCN0420.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-liv')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/living-room/20220201_DSCN0420.jpg"
+            data-srcpreview="../img/galery/living-room/20220201_DSCN0420.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-liv')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/living-room/20220201_DSCN0422.jpg"
-             data-srcpreview="../img/galery/living-room/20220201_DSCN0422.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-liv')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/living-room/20220201_DSCN0422.jpg"
+            data-srcpreview="../img/galery/living-room/20220201_DSCN0422.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-liv')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/living-room/20220201_DSCN0424.jpg"
-             data-srcpreview="../img/galery/living-room/20220201_DSCN0424.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-liv')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/living-room/20220201_DSCN0424.jpg"
+            data-srcpreview="../img/galery/living-room/20220201_DSCN0424.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-liv')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/living-room/20220201_DSCN0428.jpg"
-             data-srcpreview="../img/galery/living-room/20220201_DSCN0428.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-liv')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/living-room/20220201_DSCN0428.jpg"
+            data-srcpreview="../img/galery/living-room/20220201_DSCN0428.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-liv')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/living-room/20220201_DSCN0431.jpg"
-             data-srcpreview="../img/galery/living-room/20220201_DSCN0431.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-liv')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/living-room/20220201_DSCN0431.jpg"
+            data-srcpreview="../img/galery/living-room/20220201_DSCN0431.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-liv')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/living-room/20220201_DSCN0442.jpg"
-             data-srcpreview="../img/galery/living-room/20220201_DSCN0442.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-liv')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/living-room/20220201_DSCN0442.jpg"
+            data-srcpreview="../img/galery/living-room/20220201_DSCN0442.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-liv')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/living-room/20220201_DSCN0443.jpg"
-             data-srcpreview="../img/galery/living-room/20220201_DSCN0443.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-liv')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/living-room/20220201_DSCN0443.jpg"
+            data-srcpreview="../img/galery/living-room/20220201_DSCN0443.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-liv')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/living-room/20220201_DSCN0444.jpg"
-             data-srcpreview="../img/galery/living-room/20220201_DSCN0444.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-liv')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/living-room/20220201_DSCN0444.jpg"
+            data-srcpreview="../img/galery/living-room/20220201_DSCN0444.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-liv')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/living-room/20220201_DSCN0445.jpg"
-             data-srcpreview="../img/galery/living-room/20220201_DSCN0445.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-liv')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/living-room/20220201_DSCN0445.jpg"
+            data-srcpreview="../img/galery/living-room/20220201_DSCN0445.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
 
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-liv')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/living-room/20220202_DSCN1994.jpg"
-             data-srcpreview="../img/galery/living-room/20220202_DSCN1994.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-liv')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/living-room/20220202_DSCN1994.jpg"
+            data-srcpreview="../img/galery/living-room/20220202_DSCN1994.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
     </div>
 
     {# Entrance #}
-    <div x-cloak
-         x-show="selectedCategory == 4"
-         x-transition:enter.duration.300ms      
-         class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" 
-         >
+    <div
+      x-cloak
+      x-show="selectedCategory == 4"
+      x-transition:enter.duration.300ms
+      class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+    >
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220201_117.jpg"
-             data-srcpreview="../img/galery/entrance/20220201_117.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220201_117.jpg"
+            data-srcpreview="../img/galery/entrance/20220201_117.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220201_118.jpg"
-             data-srcpreview="../img/galery/entrance/20220201_118.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220201_118.jpg"
+            data-srcpreview="../img/galery/entrance/20220201_118.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220201_119.jpg"
-             data-srcpreview="../img/galery/entrance/20220201_119.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220201_119.jpg"
+            data-srcpreview="../img/galery/entrance/20220201_119.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220201_120.jpg"
-             data-srcpreview="../img/galery/entrance/20220201_120.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220201_120.jpg"
+            data-srcpreview="../img/galery/entrance/20220201_120.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220201_121.jpg"
-             data-srcpreview="../img/galery/entrance/20220201_121.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220201_121.jpg"
+            data-srcpreview="../img/galery/entrance/20220201_121.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220201_122.jpg"
-             data-srcpreview="../img/galery/entrance/20220201_122.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220201_122.jpg"
+            data-srcpreview="../img/galery/entrance/20220201_122.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220201_123.jpg"
-             data-srcpreview="../img/galery/entrance/20220201_123.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220201_123.jpg"
+            data-srcpreview="../img/galery/entrance/20220201_123.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220201_124.jpg"
-             data-srcpreview="../img/galery/entrance/20220201_124.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220201_124.jpg"
+            data-srcpreview="../img/galery/entrance/20220201_124.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220201_DSCN1931.jpg"
-             data-srcpreview="../img/galery/entrance/20220201_DSCN1931.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220201_DSCN1931.jpg"
+            data-srcpreview="../img/galery/entrance/20220201_DSCN1931.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220201_DSCN1928.jpg"
-             data-srcpreview="../img/galery/entrance/20220201_DSCN1928.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220201_DSCN1928.jpg"
+            data-srcpreview="../img/galery/entrance/20220201_DSCN1928.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220201_DSCN1930.jpg"
-             data-srcpreview="../img/galery/entrance/20220201_DSCN1930.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220201_DSCN1930.jpg"
+            data-srcpreview="../img/galery/entrance/20220201_DSCN1930.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220201_DSCN1600.jpg"
-             data-srcpreview="../img/galery/entrance/20220201_DSCN1600.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220201_DSCN1600.jpg"
+            data-srcpreview="../img/galery/entrance/20220201_DSCN1600.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220202_DSCN2008.jpg"
-             data-srcpreview="../img/galery/entrance/20220202_DSCN2008.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220202_DSCN2008.jpg"
+            data-srcpreview="../img/galery/entrance/20220202_DSCN2008.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220202_DSCN2025.jpg"
-             data-srcpreview="../img/galery/entrance/20220202_DSCN2025.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220202_DSCN2025.jpg"
+            data-srcpreview="../img/galery/entrance/20220202_DSCN2025.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
       <div class="inline-block mx-auto">
-        <a 
-            x-on:click="selectedImage = $el.childNodes[1].id" 
-            class="cursor-pointer">
+        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
           <img
-             x-bind:id="$id('image-galery-ent')" 
-             x-intersect.once="$el.src = $el.dataset.srcpreview"
-             class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
-             data-src="../img/galery/entrance/20220202_DSCN2026.jpg"
-             data-srcpreview="../img/galery/entrance/20220202_DSCN2026.jpg?width=400px"
-             width="4608"
-             height="3456"
-             alt=""/>
+            x-bind:id="$id('image-galery-ent')"
+            x-intersect.once="$el.src = $el.dataset.srcpreview"
+            class="w-full h-full md:w-[275px] md:h-[275px] 2xl:w-[350px] 2xl:h-[350px]"
+            data-src="../img/galery/entrance/20220202_DSCN2026.jpg"
+            data-srcpreview="../img/galery/entrance/20220202_DSCN2026.jpg?width=400px"
+            width="4608"
+            height="3456"
+            alt=""
+          />
         </a>
       </div>
     </div>
   </div>
-</div>
 </section>
