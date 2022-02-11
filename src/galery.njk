@@ -316,7 +316,11 @@ description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und In
       class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
     >
       <div class="inline-block mx-auto">
-        <a x-on:click="selectedImage = $el.childNodes[1].id" class="cursor-pointer">
+        <a
+          x-on:click="selectedImage = $el.childNodes[1].id"
+          class="cursor-pointer"
+          href="javascript:void(0)"
+        >
           <img
             x-bind:id="$id('image-galery-kit')"
             x-intersect.once="$el.src = $el.dataset.srcpreview"
