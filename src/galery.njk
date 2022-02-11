@@ -4,85 +4,138 @@ title: Tischlerei Weißenbek
 description: Tischlerei Weißenbek bietet individuell angefertigte Möbel und Innenausstattungen.
 ---
 
+{# Carousel #}
 <section x-data="carousel" x-init="initialize()" class="container mx-auto">
-  <div x-show="currentImage == 1">
-    <picture>
-      <source
-        media="(min-width: 1536px)"
-        srcset="../img/galery/carousel/DSCN0664.jpg?width=1536px"
-      />
-      <source
-        media="(min-width: 1280px)"
-        srcset="../img/galery/carousel/DSCN0664.jpg?width=1280px"
-      />
-      <source
-        media="(min-width: 1024px)"
-        srcset="../img/galery/carousel/DSCN0664.jpg?width=1024px"
-      />
-      <source media="(min-width: 768px)" srcset="../img/galery/carousel/DSCN0664.jpg?width=768px" />
-      <source media="(min-width: 640px)" srcset="../img/galery/carousel/DSCN0664.jpg?width=640px" />
-      <img
-        class="block w-full"
-        src="../img/galery/carousel/DSCN0664.jpg?width=1536px"
-        width="2500"
-        height="1369"
-        alt="Image 1"
-      />
-    </picture>
-  </div>
-  <div x-cloak x-show="currentImage == 2">
-    <picture>
-      <source
-        media="(min-width: 1536px)"
-        srcset="../img/galery/carousel/DSCN1922.jpg?width=1536px"
-      />
-      <source
-        media="(min-width: 1280px)"
-        srcset="../img/galery/carousel/DSCN1922.jpg?width=1280px"
-      />
-      <source
-        media="(min-width: 1024px)"
-        srcset="../img/galery/carousel/DSCN1922.jpg?width=1024px"
-      />
-      <source media="(min-width: 768px)" srcset="../img/galery/carousel/DSCN1922.jpg?width=768px" />
-      <source media="(min-width: 640px)" srcset="../img/galery/carousel/DSCN1922.jpg?width=640px" />
-      <img
-        class="block w-full"
-        src="../img/galery/carousel/DSCN1922.jpg?width=1536px"
-        width="2500"
-        height="1369"
-        alt="Image 2"
-      />
-    </picture>
-  </div>
-  <div x-cloak x-show="currentImage == 3">
-    <picture>
-      <source
-        media="(min-width: 1536px)"
-        srcset="../img/galery/carousel/DSCN1996.jpg?width=1536px"
-      />
-      <source
-        media="(min-width: 1280px)"
-        srcset="../img/galery/carousel/DSCN1996.jpg?width=1280px"
-      />
-      <source
-        media="(min-width: 1024px)"
-        srcset="../img/galery/carousel/DSCN1996.jpg?width=1024px"
-      />
-      <source media="(min-width: 768px)" srcset="../img/galery/carousel/DSCN1996.jpg?width=768px" />
-      <source media="(min-width: 640px)" srcset="../img/galery/carousel/DSCN1996.jpg?width=640px" />
-      <img
-        class="block w-full"
-        src="../img/galery/carousel/DSCN1996.jpg?width=1536px"
-        width="4608"
-        height="2524"
-        alt="Image 3"
-      />
-    </picture>
+  <div class="relative">
+    <div class="absolute top-1/2 left-0">
+      <button class="mt-3 md:mt-0" x-on:click="backButton($event)">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-20 w-20 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="absolute top-1/2 right-0">
+      <button class="mt-3 md:mt-0" x-on:click="forwardButton($event)">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-20 w-20 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+
+    <div x-show="currentImage == 1">
+      <picture>
+        <source
+          media="(min-width: 1536px)"
+          srcset="../img/galery/carousel/DSCN0664.jpg?width=1536px"
+        />
+        <source
+          media="(min-width: 1280px)"
+          srcset="../img/galery/carousel/DSCN0664.jpg?width=1280px"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcset="../img/galery/carousel/DSCN0664.jpg?width=1024px"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="../img/galery/carousel/DSCN0664.jpg?width=768px"
+        />
+        <source
+          media="(min-width: 640px)"
+          srcset="../img/galery/carousel/DSCN0664.jpg?width=640px"
+        />
+        <img
+          class="block w-full"
+          src="../img/galery/carousel/DSCN0664.jpg?width=1536px"
+          width="2500"
+          height="1369"
+          alt="Image 1"
+        />
+      </picture>
+    </div>
+    <div x-cloak x-show="currentImage == 2">
+      <picture>
+        <source
+          media="(min-width: 1536px)"
+          srcset="../img/galery/carousel/DSCN1922.jpg?width=1536px"
+        />
+        <source
+          media="(min-width: 1280px)"
+          srcset="../img/galery/carousel/DSCN1922.jpg?width=1280px"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcset="../img/galery/carousel/DSCN1922.jpg?width=1024px"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="../img/galery/carousel/DSCN1922.jpg?width=768px"
+        />
+        <source
+          media="(min-width: 640px)"
+          srcset="../img/galery/carousel/DSCN1922.jpg?width=640px"
+        />
+        <img
+          class="block w-full"
+          src="../img/galery/carousel/DSCN1922.jpg?width=1536px"
+          width="2500"
+          height="1369"
+          alt="Image 2"
+        />
+      </picture>
+    </div>
+    <div x-cloak x-show="currentImage == 3">
+      <picture>
+        <source
+          media="(min-width: 1536px)"
+          srcset="../img/galery/carousel/DSCN1996.jpg?width=1536px"
+        />
+        <source
+          media="(min-width: 1280px)"
+          srcset="../img/galery/carousel/DSCN1996.jpg?width=1280px"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcset="../img/galery/carousel/DSCN1996.jpg?width=1024px"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="../img/galery/carousel/DSCN1996.jpg?width=768px"
+        />
+        <source
+          media="(min-width: 640px)"
+          srcset="../img/galery/carousel/DSCN1996.jpg?width=640px"
+        />
+        <img
+          class="block w-full"
+          src="../img/galery/carousel/DSCN1996.jpg?width=1536px"
+          width="4608"
+          height="2524"
+          alt="Image 3"
+        />
+      </picture>
+    </div>
   </div>
 </section>
 
- {# Portfolio #}
+{# Portfolio #}
 <section x-data="portfolio" id="portfolio" class="py-20">
   {# Lightbox Backdrop #}
   <div
